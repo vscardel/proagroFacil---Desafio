@@ -1,5 +1,5 @@
-import config
-from config import app
+from flask import Flask,render_template,request,redirect,flash,session
+from flaskext.mysql import MySQL
 
 @app.route('/')
 def index():
