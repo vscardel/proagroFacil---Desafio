@@ -15,8 +15,8 @@ def index():
 @app.route('/cadastro',methods = ['GET','POST'])
 def formulario_cadastro():
 	if request.method == 'POST':
-		return redirect(url_for('index'))
-	return redirect(url_for('cadastro'))
+		return render_template('index.html')
+	return render_template('cadastro.html')
 
 if __name__ == '__main__':
 	app.run(debug=True)
