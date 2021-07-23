@@ -10,7 +10,7 @@ cursor = conn.cursor()
 
 @app.route('/')
 def index():
-	return "oi"
+	return "oiiiii"
 
 if __name__ == '__main__':
 	app.run(debug=True)
