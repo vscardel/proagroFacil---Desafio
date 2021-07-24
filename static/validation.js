@@ -75,17 +75,15 @@ function validade_email(e) {
 	let flag_tld = false;
 	//escaneia a string e separa o domain do tld
 	for(let i=0;i<email.length; i++) {
-		if(flag_domain) {
-			domain += email[i];
-		}
 		if(email[i] == '@') {
 			flag_domain = true;
-			continue;
 		}
 		if(email[i] == '.') {
 			flag_tld = true;
 			flag_domain = false;
-			continue;
+		}
+		if(flag_domain) {
+			domain += email[i];
 		}
 		if(flag_tld) {
 			tld += email[i];
