@@ -68,6 +68,7 @@ function validate_cpf(e) {
 //o uso de regex e verificações muito complicadas
 function validade_email(e) {
 	email = document.getElementById('femail').value;
+	console.log(email);
 	let domain = "";
 	let flag_domain = false;
 	let tld = "";
