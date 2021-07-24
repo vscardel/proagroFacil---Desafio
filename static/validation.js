@@ -26,7 +26,7 @@ function validate_cpf(e) {
 		//verificacao do primeiro digito
 		let cont = 10;
 		let sum = 0;
-		for(let i=0;i<10;i++) {
+		for(let i=0;i<9;i++) {
 			sum += (cont*parseInt(cpf[i]));
 			cont--;
 		}
@@ -37,7 +37,7 @@ function validate_cpf(e) {
 		//verificacao do primeiro digito
 		cont = 11;
 		sum = 0;
-		for(let i=0;i<11;i++) {
+		for(let i=0;i<10;i++) {
 			sum += (cont*parseInt(cpf[i]));
 			cont--;
 		}
