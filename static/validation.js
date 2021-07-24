@@ -135,6 +135,7 @@ function validate_form(e) {
 		if (input.value == '') {
 			//borda do input setada como vermelha para indicar erro
 			input.style.borderColor = "rgb(236, 19, 19)";
+			input.style.borderWidth = "3px";
 			flag_input_error = false;
 		}
 	}
@@ -143,10 +144,12 @@ function validate_form(e) {
 	bool_email = validate_email();
 	if(bool_cpf == false) {
 		cpf.style.borderColor = "rgb(236, 19, 19)";
+		cpf.style.borderWidth = "3px";
 		flag_input_error = false;
 	}
 	if(bool_email == false) {
 		email.style.borderColor = "rgb(236, 19, 19)";
+		email.style.borderWidth = "3px";
 		flag_input_error = false;
 	}
 	return flag_input_error;
