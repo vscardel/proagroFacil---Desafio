@@ -1,5 +1,5 @@
 list_of_commom_valid_domains = ['gmail','hotmail','yahoo,','aol','msn',
-'mail','uol','ig''outlook'];
+'mail','uol','ig','outlook'];
 
 list_of_commom_valid_tld = ['com','net','org','gov','edu','info','mil'];
 
