@@ -90,15 +90,14 @@ function validade_email(e) {
 			tld += email[i];
 		}
 	}
-	if(!list_of_commom_valid_domains.includes(domain)) {
-		return false;
-	}
-	else if(!list_of_commom_valid_tld.includes(tld)) {
-		return false;
-	}
-	else {
+	if(list_of_commom_valid_domains.includes(domain) && 
+		list_of_commom_valid_tld.includes(tld)) {
 		return true;
 	}
+	else {
+		return false;
+	}
+	
 }
 
 function debug(e) {
