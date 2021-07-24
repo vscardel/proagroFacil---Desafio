@@ -76,10 +76,12 @@ function validade_email(e) {
 	for(let i=0;i<email.length; i++) {
 		if(email[i] == '@') {
 			flag_domain = true;
+			continue;
 		}
 		else if(email[i] == '.') {
 			flag_tld = true;
 			flag_domain = false;
+			continue;
 		}
 		if(flag_domain) {
 			domain += email[i];
