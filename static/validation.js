@@ -84,7 +84,7 @@ function validade_email(e) {
 		if(email[i] == '.') {
 			cont_ponto += 1;
 		}
-		if(cont_ponto > 1 && cont_ponto == 0) {
+		if(cont_arroba > 1 && cont_ponto == 0) {
 			domain += email[i];
 		}
 		if(cont_ponto > 1) {
