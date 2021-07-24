@@ -9,7 +9,7 @@ function check_same_char(my_str) {
 	return true;
 }
 
-function validade_cpf(e) {
+function validate_cpf(e) {
 	let cpf = document.getElementById('fcpf');
 	// tamanho invalido
 	if(cpf.length != 11) {
