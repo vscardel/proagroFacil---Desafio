@@ -5,6 +5,29 @@ list_of_commom_valid_tld = ['com','net','org','gov','edu','info','mil'];
 
 list_of_valid_events = ['CHUVA EXCESSIVA', 'GEADA', 'GRANIZO', 'SECA', 'VENDAVAL', 'RAIO'];
 
+//retorna lista com os inputs do formulario
+function return_input_list() {
+	let name = document.getElementById('fname');
+	let email = document.getElementById('femail');
+	let cpf = document.getElementById('fcpf');
+	let lat = document.getElementById('flat');
+	let long = document.getElementById('flong');
+	let lavoura = document.getElementById('flav');
+	let ocorrencia = document.getElementById('focorr');
+	let date = document.getElementById('fdate');
+	let list_of_form_inputs = [name,email,cpf,lat,long,lavoura,ocorrencia,date];
+	return list_of_form_inputs;
+}
+
+
+function refresh_form() {
+	list_of_form_inputs = return_input_list();
+	for (let i=0;i<list_of_form_inputs.length;i++) {
+		input = list_of_form_inputs[i];
+		input.style.border = "none";
+	}
+}
+
 //checa se uma string eh composta pelo mesmo caractere
 function check_same_char(my_str) {
 	let first_char = my_str[0];
@@ -107,25 +130,8 @@ function validate_email(e) {
 	
 }
 
-//determina se o evento digitado é válido
-function validate_event(e) {
-	event = document.getElementById('focorr').value;
-	if(list_of_valid_events.includes(event)) {
-		return true;
-	}
-	return false;
-}
-
 function validate_form(e) {
-	let name = document.getElementById('fname');
-	let email = document.getElementById('femail');
-	let cpf = document.getElementById('fcpf');
-	let lat = document.getElementById('flat');
-	let long = document.getElementById('flong');
-	let lavoura = document.getElementById('flav');
-	let ocorrencia = document.getElementById('focorr');
-	let date = document.getElementById('fdate');
-	let list_of_form_inputs = [name,email,cpf,lat,long,lavoura,ocorrencia,date];
+	list_of_form_inputs = return_input_list();
 	//assume q nao ocorreram erros
 	let flag_input_error = true;
 	for (let i=0;i<list_of_form_inputs.length;i++) {
@@ -154,6 +160,7 @@ function validate_form(e) {
 }
 //
 function validate(e) {
+	refresh_form();
 	val_form = validate_form();
 	if (!val_form) {
 		alert("Alguma informação está incorreta.");
