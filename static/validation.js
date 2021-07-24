@@ -79,6 +79,8 @@ function validade_email(e) {
 	let cont_ponto = 0;
 	//escaneia a string e separa o domain do tld
 	for(let i=0;i<email.length; i++) {
+		console.log(cont_arroba);
+		console.log(cont_ponto);
 		if(email[i] == '@') {
 			cont_arroba += 1;
 		}
