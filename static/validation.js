@@ -154,10 +154,10 @@ function validate_form(e) {
 }
 
 function validate(e) {
-	e.preventDefault();
 	val_form = validate_form();
 	if (!val_form) {
 		alert("Alguma informação está incorreta.");
 		return false;
 	}
+	return true;
 }
