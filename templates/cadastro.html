@@ -3,7 +3,7 @@
 {%block head%}
 
 
-<script type="text/javascript" src="js/validation.js"></script>
+<script src="js/validation.js"></script>
 
 <style type="text/css">
 	input[type=text], select {
@@ -47,7 +47,7 @@
 
 <div id="div_form">
 	
-  <form action="/cadastro", method="POST", onsubmit="false">
+  <form action="/cadastro", method="POST", onsubmit="return msg(event)">
 
     <label for="fname">Nome Completo</label>
     <input type="text" id="fname" name="firstname" placeholder="Seu nome">
