@@ -128,8 +128,10 @@ function validate_form(e) {
 		input = list_of_form_inputs[i];
 		if (input.value == '') {
 			if (input.name == 'cpf')
+				console.log(input);
 				cpf = input;
 			if(input.name == 'email')
+				console.log(input);
 				email = input;
 			//borda do input setada como vermelha para indicar erro
 			input.style.borderColor = "rgb(236, 19, 19)";
@@ -137,7 +139,6 @@ function validate_form(e) {
 			flag_input_error = false;
 		}
 	}
-	console.log(cpf);
 	//validação de email e cpf
 	bool_cpf = validate_cpf();
 	bool_email = validate_email();
