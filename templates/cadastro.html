@@ -1,6 +1,7 @@
 {%extends 'base.html'%}
 
 {%block head%}
+<<<<<<< HEAD
 <style type="text/css">
 	input[type=text], select {
 	  width: 100%;
@@ -32,6 +33,39 @@
 	  background-color: #f2f2f2;
 	  padding: 20px;
 	}
+=======
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+>>>>>>> ba8c96cdbace362db2dc6e903e7fa4620dd05af0
 </style>
 
 {%endblock%}
@@ -45,23 +79,26 @@
     <label for="fname">Nome Completo</label>
     <input type="text" id="fname" name="firstname" placeholder="Your name..">
 
-    <label for="fname">E-mail</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    <label for="femail">E-mail</label>
+    <input type="text" id="femail" name="email" placeholder="Email..">
 
-    <label for="fname">CPF</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    <label for="fCPF">CPF</label>
+    <input type="text" id="fCPF" name="CPF" placeholder="CPF..">
 
-    <label for="fname">Latitude</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    <label for="flat">Latitude</label>
+    <input type="text" id="flat" name="la" placeholder="Latitude..">
 
-    <label for="fname">Longitude</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    <label for="flong">Longitude</label>
+    <input type="text" id="flong" name="Longitude" placeholder="Longitude..">
 
-    <label for="fname">Lavoura</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    <label for="flav">Lavoura</label>
+    <input type="text" id="flav" name="lavoura" placeholder="Lavoura..">
 
-    <label for="fname">Ocorrência</label>
-    <input type="date" id="fname" name="firstname" placeholder="Your name..">
+    <label for="focorr">Ocorrência</label>
+    <input type="text" id="focorr" name="ocorrencia" placeholder="Ocorrência..">
+
+    <label for="fdata">Data</label>
+    <input type="date" id="fdata" name="data">
 
     <input type="submit" value="Enviar">
 
