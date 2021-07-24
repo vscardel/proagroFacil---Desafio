@@ -137,10 +137,10 @@ function validate_form(e) {
 	for (let i=0;i<list_of_form_inputs.length;i++) {
 		input = list_of_form_inputs[i];
 		if (input.value == '') {
-			if (input.name == 'cpf)'
+			if (input.name == 'cpf')
 				cpf = input;
 			if(input.name == 'email')
-				email = input
+				email = input;
 			//borda do input setada como vermelha para indicar erro
 			input.style.borderColor = "rgb(236, 19, 19)";
 			input.style.borderWidth = "3px";
