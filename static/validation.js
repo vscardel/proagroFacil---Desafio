@@ -55,6 +55,11 @@ function validate_cpf(e) {
 	}
 }
 
+function validade_email(e) {
+	email = document.getElementById('femail').value;
+	console.log(email);
+}
+
 function debug(e) {
 	e.preventDefault();
 	alert(validate_cpf());
