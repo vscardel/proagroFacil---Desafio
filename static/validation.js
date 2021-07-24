@@ -22,7 +22,7 @@ function refresh_form() {
 	list_of_form_inputs = return_input_list();
 	for (let i=0;i<list_of_form_inputs.length;i++) {
 		input = list_of_form_inputs[i];
-		input.style.border = "none";
+		input.style.borderColor = "none";
 	}
 }
 
@@ -163,6 +163,7 @@ function validate_form(e) {
 }
 //
 function validate(e) {
+	refresh_form();
 	val_form = validate_form();
 	if (!val_form) {
 		alert("Alguma informação está incorreta.");
