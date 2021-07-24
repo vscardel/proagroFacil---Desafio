@@ -69,11 +69,9 @@ function validate_cpf(e) {
 //o uso de regex e verificações muito complicadas
 function validate_email(e) {
 	email = document.getElementById('femail').value;
-	console.log(email);
 	if(email.length > 255) {
 		return false;
 	}
-	console.log(email.length);
 	let domain = "";
 	let cont_arroba = 0;
 	let tld = "";
@@ -158,6 +156,7 @@ function validate_form(e) {
 function validate(e) {
 	e.preventDefault();
 	val_form = validate_form();
+	console.log(val_form);
 	if (!val_form) {
 		alert("Alguma informação está incorreta.")
 	}
