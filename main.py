@@ -19,7 +19,8 @@ def pesquisa():
 @app.route('/cadastro',methods = ['GET','POST'])
 def formulario_cadastro():
 	if request.method == 'POST':
-		return render_template('index.html')
+		# return render_template('index.html')
+		pass
 	return render_template('cadastro.html')
 
 
