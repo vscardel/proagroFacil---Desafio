@@ -139,7 +139,9 @@ function validate_form(e) {
 	}
 	//validação de email e cpf
 	bool_cpf = validate_cpf();
+	console.log(bool_cpf);
 	bool_email = validate_email();
+	console.log(bool_email);
 	if(bool_cpf == false) {
 		cpf.style.borderColor = "rgb(236, 19, 19)";
 		cpf.style.borderWidth = "3px";
