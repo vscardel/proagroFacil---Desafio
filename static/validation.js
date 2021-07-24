@@ -134,7 +134,7 @@ function validate_form(e) {
 	let flag_input_error = false;
 	for (input in list_of_form_inputs) {
 		if (input.value == '') {
-			input.style.border-color = "rgb(236, 19, 19)";
+			input.style.borderColor = "rgb(236, 19, 19)";
 			flag_input_error = true;
 		}
 	}
@@ -142,11 +142,11 @@ function validate_form(e) {
 	bool_cpf = validate_cpf();
 	bool_email = validate_email();
 	if(bool_cpf == false) {
-		cpf.style.border-color = "rgb(236, 19, 19)";
+		cpf.style.borderColor = "rgb(236, 19, 19)";
 		flag_input_error = true;
 	}
 	if(bool_email == false) {
-		email.style.border-color = "rgb(236, 19, 19)";
+		email.style.borderColor = "rgb(236, 19, 19)";
 		flag_input_error = true;
 	}
 	return flag_input_error;
