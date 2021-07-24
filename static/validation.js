@@ -119,14 +119,14 @@ function validate_event(e) {
 }
 
 function validate_form(e) {
-	name = document.getElementById('fname');
-	email = document.getElementById('femail');
-	cpf = document.getElementById('fcpf');
-	lat = document.getElementById('flat');
-	long = document.getElementById('flong');
-	lavoura = document.getElementById('flav');
-	ocorrencia = document.getElementById('focorr');
-	date = document.getElementById('fdate');
+	let name = document.getElementById('fname');
+	let email = document.getElementById('femail');
+	let cpf = document.getElementById('fcpf');
+	let lat = document.getElementById('flat');
+	let long = document.getElementById('flong');
+	let lavoura = document.getElementById('flav');
+	let ocorrencia = document.getElementById('focorr');
+	let date = document.getElementById('fdate');
 	list_of_form_inputs = [name,email,cpf,lat,long,lavoura,ocorrencia,date]
 	//assume q nao ocorreram erros
 	let flag_input_error = true;
