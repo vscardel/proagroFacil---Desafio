@@ -71,7 +71,6 @@ function validade_email(e) {
 	email = document.getElementById('femail').value;
 	console.log(email);
 	if(email.length > 255) {
-		console.log('oi');
 		return false;
 	}
 	console.log(email.length);
@@ -100,8 +99,6 @@ function validade_email(e) {
 			tld += email[i];
 		}
 	}
-	console.log(tld);
-	console.log(domain);
 	if(list_of_commom_valid_domains.includes(domain) && 
 		list_of_commom_valid_tld.includes(tld)) {
 		return true;
