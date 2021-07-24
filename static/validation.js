@@ -88,9 +88,15 @@ function validade_email(e) {
 			cont_ponto += 1;
 		}
 		if(cont_arroba == 1 && cont_ponto == 0) {
+			//primeiro @ encontrado
+			if(email[i] == '@')
+				continue;
 			domain += email[i];
 		}
 		if(cont_ponto == 1) {
+			//primeiro ponto encontrado
+			if(email[i] == '.')
+				continue;
 			tld += email[i];
 		}
 	}
