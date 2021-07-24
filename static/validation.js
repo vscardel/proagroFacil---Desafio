@@ -118,8 +118,35 @@ function validate_event(e) {
 	return false;
 }
 
-function debug(e) {
-	e.preventDefault();
-	alert(validate_event());
-	return false;
+function validate_form(e) {
+	name = document.getElementById('fname');
+	email = document.getElementById('femail');
+	cpf = document.getElementById('fcpf');
+	lat = document.getElementById('flat');
+	long = document.getElementById('flong');
+	lavoura = document.getElementById('flav');
+	ocorrencia = document.getElementById('focorr');
+	date = document.getElementById('fdate');
+	list_of_form_inputs = [name,email,cpf,lat,long,lavoura,ocorrencia,date]
+	//borda do input setada como vermelha para indicar erro
+	//testa se o input foi deixado vazio
+	let flag_input_error = false;
+	for (input in list_of_form_inputs) {
+		if (input.value == '') {
+			input.style.border-color = rgb(236, 19, 19);
+			flag_input_error = true;
+		}
+	}
+	//validação de email e cpf
+	bool_cpf = validate_cpf();
+	bool_email = validate_email();
+	if(bool_cpf == false) {
+		cpf.style.border-color = rgb(236, 19, 19);
+		flag_input_error = true;
+	}
+	if(bool_email == false) {
+		email.style.border-color = rgb(236, 19, 19);
+		flag_input_error = true;
+	}
+	return flag_input_error;
 }
