@@ -5,7 +5,7 @@ list_of_commom_valid_tld = ['com','net','org','gov','edu','info','mil'];
 
 list_of_valid_events = ['CHUVA EXCESSIVA', 'GEADA', 'GRANIZO', 'SECA', 'VENDAVAL', 'RAIO'];
 
-//checa se uma eh composta pelo mesmo caracter
+//checa se uma string eh composta pelo mesmo caractere
 function check_same_char(my_str) {
 	let first_char = my_str[0];
 	for(let i=1; i < my_str.length; i++) {
@@ -16,6 +16,7 @@ function check_same_char(my_str) {
 	return true;
 }
 
+//segue o algoritmo padrão de verificação de cpf
 function validate_cpf(e) {
 	let cpf = document.getElementById('fcpf').value;
 	// tamanho invalido
@@ -74,6 +75,12 @@ function validade_email(e) {
 	let flag_tld = false;
 	//escaneia a string e separa o domain do tld
 	for(let i=0;i<email.length; i++) {
+		if(flag_domain) {
+			domain += email[i];
+		}
+		if(flag_tld) {
+			tld += email[i];
+		}
 		if(email[i] == '@') {
 			flag_domain = true;
 			continue;
@@ -82,12 +89,6 @@ function validade_email(e) {
 			flag_tld = true;
 			flag_domain = false;
 			continue;
-		}
-		if(flag_domain) {
-			domain += email[i];
-		}
-		if(flag_tld) {
-			tld += email[i];
 		}
 	}
 	if(list_of_commom_valid_domains.includes(domain) && 
