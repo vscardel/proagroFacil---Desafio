@@ -11,7 +11,6 @@ function check_same_char(my_str) {
 
 function validate_cpf(e) {
 	let cpf = document.getElementById('fcpf').value;
-	console.log(cpf);
 	// tamanho invalido
 	if(cpf.length != 11) {
 		return false;
@@ -35,7 +34,6 @@ function validate_cpf(e) {
 		if(first_verification_result == 10) {
 			first_verification_result = 0.
 		}
-		console.log(first_verification_result);
 		if(first_verification_result != first_digit) {
 			return false;
 		}
@@ -50,7 +48,6 @@ function validate_cpf(e) {
 		if(second_verification_result == 10) {
 			second_verification_result = 0;
 		}
-		console.log(second_verification_result);
 		if(second_verification_result != second_digit) {
 			return false;
 		}
@@ -60,6 +57,6 @@ function validate_cpf(e) {
 
 function debug(e) {
 	e.preventDefault();
-	validate_cpf();
+	alert(validate_cpf());
 	return false;
 }
