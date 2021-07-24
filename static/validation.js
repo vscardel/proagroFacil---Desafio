@@ -131,7 +131,6 @@ function validate_form(e) {
 	//assume q nao ocorreram erros
 	let flag_input_error = true;
 	for (input in list_of_form_inputs) {
-		console.log(input.name);
 		console.log(input.value);
 		if (input.value == '') {
 			//borda do input setada como vermelha para indicar erro
