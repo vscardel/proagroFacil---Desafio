@@ -78,17 +78,17 @@ function validade_email(e) {
 		if(flag_domain) {
 			domain += email[i];
 		}
-		if(flag_tld) {
-			tld += email[i];
-		}
 		if(email[i] == '@') {
 			flag_domain = true;
 			continue;
 		}
-		else if(email[i] == '.') {
+		if(email[i] == '.') {
 			flag_tld = true;
 			flag_domain = false;
 			continue;
+		}
+		if(flag_tld) {
+			tld += email[i];
 		}
 	}
 	console.log(tld);
