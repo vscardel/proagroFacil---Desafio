@@ -119,7 +119,6 @@ function validate_event(e) {
 }
 
 function validate_form(e) {
-	e.preventDefault();
 	name = document.getElementById('fname');
 	email = document.getElementById('femail');
 	cpf = document.getElementById('fcpf');
@@ -132,6 +131,7 @@ function validate_form(e) {
 	//assume q nao ocorreram erros
 	let flag_input_error = true;
 	for (input in list_of_form_inputs) {
+		console.log(input.value);
 		if (input.value == '') {
 			//borda do input setada como vermelha para indicar erro
 			input.style.borderColor = "rgb(236, 19, 19)";
@@ -152,8 +152,8 @@ function validate_form(e) {
 	return flag_input_error;
 }
 
-function debug(e) {
+function validate(e) {
 	e.preventDefault();
-	alert(validate_form());
-	return false;
+	val_form = validate_form();
+	alert(val_form);
 }
