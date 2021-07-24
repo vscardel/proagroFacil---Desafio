@@ -156,9 +156,8 @@ function validate_form(e) {
 function validate(e) {
 	e.preventDefault();
 	val_form = validate_form();
-	console.log(val_form);
 	if (!val_form) {
-		alert("Alguma informação está incorreta.")
+		alert("Alguma informação está incorreta.");
 	}
 	else {
 		return true;
