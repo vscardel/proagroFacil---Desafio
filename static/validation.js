@@ -20,6 +20,7 @@ function return_input_list() {
 
 function refresh_form() {
 	list_of_form_inputs = return_input_list();
+	console.log(list_of_form_inputs);
 	for (let i=0;i<list_of_form_inputs.length;i++) {
 		input = list_of_form_inputs[i];
 		input.style.border = "none";
