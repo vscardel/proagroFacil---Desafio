@@ -127,7 +127,7 @@ function validate_form(e) {
 	let lavoura = document.getElementById('flav');
 	let ocorrencia = document.getElementById('focorr');
 	let date = document.getElementById('fdate');
-	list_of_form_inputs = [name,email,cpf,lat,long,lavoura,ocorrencia,date]
+	let list_of_form_inputs = [name,email,cpf,lat,long,lavoura,ocorrencia,date]
 	//assume q nao ocorreram erros
 	let flag_input_error = true;
 	for (input in list_of_form_inputs) {
