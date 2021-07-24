@@ -120,6 +120,6 @@ function validate_event(e) {
 
 function debug(e) {
 	e.preventDefault();
-	alert(validate_event);
+	alert(validate_event());
 	return false;
 }
