@@ -132,7 +132,6 @@ function validate_form(e) {
 	let flag_input_error = true;
 	for (let i=0;i<list_of_form_inputs.length;i++) {
 		input = list_of_form_inputs[i];
-		console.log(input.value);
 		if (input.value == '') {
 			//borda do input setada como vermelha para indicar erro
 			input.style.borderColor = "rgb(236, 19, 19)";
@@ -156,5 +155,10 @@ function validate_form(e) {
 function validate(e) {
 	e.preventDefault();
 	val_form = validate_form();
-	alert(val_form);
+	if (!val_form) {
+		alert("Alguma informação está incorreta.")
+	}
+	else {
+		return true;
+	}
 }
