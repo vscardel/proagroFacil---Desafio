@@ -91,6 +91,8 @@ function validade_email(e) {
 			continue;
 		}
 	}
+	console.log(tld);
+	console.log(domain);
 	if(list_of_commom_valid_domains.includes(domain) && 
 		list_of_commom_valid_tld.includes(tld)) {
 		return true;
