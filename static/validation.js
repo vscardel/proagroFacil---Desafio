@@ -132,11 +132,11 @@ function validate_form(e) {
 	let flag_input_error = true;
 	for (input in list_of_form_inputs) {
 		console.log(input.value);
-		if (input.value == '') {
+		//if (input.value == '') {
 			//borda do input setada como vermelha para indicar erro
-			input.style.borderColor = "rgb(236, 19, 19)";
-			flag_input_error = false;
-		}
+		//	input.style.borderColor = "rgb(236, 19, 19)";
+		//	flag_input_error = false;
+		//}
 	}
 	//validação de email e cpf
 	bool_cpf = validate_cpf();
