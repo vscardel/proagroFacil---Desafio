@@ -1,9 +1,3 @@
-function my_msg(e) {
-	e.preventDefault();
-	alert("OIIIIIIII");
-	return false;
-}
-
 //checa se uma eh composta pelo mesmo caracter
 function check_same_char(my_str) {
 	let first_char = my_str[0];
@@ -15,8 +9,8 @@ function check_same_char(my_str) {
 	return true;
 }
 
-function validade_cpf(e,cpf) {
-	e.preventDefault();
+function validade_cpf(e) {
+	let cpf = document.getElementById('fcpf');
 	// tamanho invalido
 	if(cpf.length != 11) {
 		return false;
@@ -53,4 +47,10 @@ function validade_cpf(e,cpf) {
 		}
 		return true;
 	}
+}
+
+function debug(e) {
+	e.preventDefault();
+	alert(validate_cpf());
+	return false;
 }
