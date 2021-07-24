@@ -67,7 +67,7 @@ function validate_cpf(e) {
 //se nenhum bater, retorna false. Não será verificado se
 //a parte local do endereço de e-mail é válida para evitar
 //o uso de regex e verificações muito complicadas
-function validade_email(e) {
+function validate_email(e) {
 	email = document.getElementById('femail').value;
 	console.log(email);
 	if(email.length > 255) {
@@ -109,8 +109,17 @@ function validade_email(e) {
 	
 }
 
+//determina se o evento digitado é válido
+function validate_event(e) {
+	event = document.getElementById('focorr').value;
+	if(list_of_valid_events.includes(event)) {
+		return true;
+	}
+	return false;
+}
+
 function debug(e) {
 	e.preventDefault();
-	alert(validade_email());
+	alert(validate_event);
 	return false;
 }
