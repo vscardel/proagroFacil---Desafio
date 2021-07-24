@@ -15,7 +15,8 @@ function check_same_char(my_str) {
 	return true;
 }
 
-function validade_cpf(cpf) {
+function validade_cpf(e,cpf) {
+	e.preventDefault();
 	// tamanho invalido
 	if(cpf.length != 11) {
 		return false;
