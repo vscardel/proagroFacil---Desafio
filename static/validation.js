@@ -69,23 +69,25 @@ function validate_cpf(e) {
 //o uso de regex e verificações muito complicadas
 function validade_email(e) {
 	email = document.getElementById('femail').value;
+	if(email.length > 255) {
+		return false;
+	}
 	let domain = "";
-	let flag_domain = false;
+	let cont_arroba = 0;
 	let tld = "";
-	let flag_tld = false;
+	let cont_ponto = 0;
 	//escaneia a string e separa o domain do tld
 	for(let i=0;i<email.length; i++) {
 		if(email[i] == '@') {
-			flag_domain = true;
+			cont_arroba += 1;
 		}
 		if(email[i] == '.') {
-			flag_tld = true;
-			flag_domain = false;
+			cont_ponto += 1;
 		}
-		if(flag_domain) {
+		if(cont_ponto > 1 && cont_ponto == 0) {
 			domain += email[i];
 		}
-		if(flag_tld) {
+		if(cont_ponto > 1) {
 			tld += email[i];
 		}
 	}
