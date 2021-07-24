@@ -53,6 +53,6 @@ function validate_cpf(e) {
 
 function debug(e) {
 	e.preventDefault();
-	alert(validate_cpf());
+	validate_cpf();
 	return false;
 }
