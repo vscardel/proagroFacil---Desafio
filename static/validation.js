@@ -69,10 +69,12 @@ function validate_cpf(e) {
 //o uso de regex e verificações muito complicadas
 function validade_email(e) {
 	email = document.getElementById('femail').value;
+	console.log(email);
 	if(email.length > 255) {
 		console.log('oi');
 		return false;
 	}
+	console.log(email.length);
 	let domain = "";
 	let cont_arroba = 0;
 	let tld = "";
