@@ -151,3 +151,9 @@ function validate_form(e) {
 	}
 	return flag_input_error;
 }
+
+function debug(e) {
+	e.preventDefault();
+	alert(validate_form())
+	return false;
+}
