@@ -158,8 +158,6 @@ function validate(e) {
 	val_form = validate_form();
 	if (!val_form) {
 		alert("Alguma informação está incorreta.");
-	}
-	else {
-		return true;
+		return false;
 	}
 }
