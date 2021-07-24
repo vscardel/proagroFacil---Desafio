@@ -154,6 +154,6 @@ function validate_form(e) {
 
 function debug(e) {
 	e.preventDefault();
-	alert(validate_form())
+	alert(validate_form());
 	return false;
 }
