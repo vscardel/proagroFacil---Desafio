@@ -130,6 +130,7 @@ function validate_email(e) {
 }
 
 function validate_form(e) {
+	var cpf,email;
 	list_of_form_inputs = return_input_list();
 	//assume q nao ocorreram erros
 	let flag_input_error = true;
@@ -137,9 +138,9 @@ function validate_form(e) {
 		input = list_of_form_inputs[i];
 		if (input.value == '') {
 			if (input.name) == 'cpf'
-				let cpf = input;
+				cpf = input;
 			if(input.name == 'email')
-				let email = input
+				email = input
 			//borda do input setada como vermelha para indicar erro
 			input.style.borderColor = "rgb(236, 19, 19)";
 			input.style.borderWidth = "3px";
