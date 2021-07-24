@@ -119,6 +119,7 @@ function validate_event(e) {
 }
 
 function validate_form(e) {
+	e.preventDefault();
 	name = document.getElementById('fname');
 	email = document.getElementById('femail');
 	cpf = document.getElementById('fcpf');
