@@ -1,5 +1,5 @@
-function(e){
+function msg(e) {
 	e.preventDefault();
-	alert("OIII");
+	alert("OIIIIIIII");
 	return false;
 }
