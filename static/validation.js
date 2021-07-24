@@ -1,4 +1,4 @@
-function my_alert(e) {
+function msg(e) {
 	e.preventDefault();
 	alert("OIIIIIIII");
 	return false;
