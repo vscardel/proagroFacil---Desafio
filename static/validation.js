@@ -70,6 +70,7 @@ function validate_cpf(e) {
 function validade_email(e) {
 	email = document.getElementById('femail').value;
 	if(email.length > 255) {
+		console.log('oi');
 		return false;
 	}
 	let domain = "";
