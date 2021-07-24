@@ -129,13 +129,13 @@ function validate_form(e) {
 	ocorrencia = document.getElementById('focorr');
 	date = document.getElementById('fdate');
 	list_of_form_inputs = [name,email,cpf,lat,long,lavoura,ocorrencia,date]
-	//borda do input setada como vermelha para indicar erro
-	//testa se o input foi deixado vazio
-	let flag_input_error = false;
+	//assume q nao ocorreram erros
+	let flag_input_error = true;
 	for (input in list_of_form_inputs) {
 		if (input.value == '') {
+			//borda do input setada como vermelha para indicar erro
 			input.style.borderColor = "rgb(236, 19, 19)";
-			flag_input_error = true;
+			flag_input_error = false;
 		}
 	}
 	//validação de email e cpf
@@ -143,11 +143,11 @@ function validate_form(e) {
 	bool_email = validate_email();
 	if(bool_cpf == false) {
 		cpf.style.borderColor = "rgb(236, 19, 19)";
-		flag_input_error = true;
+		flag_input_error = false;
 	}
 	if(bool_email == false) {
 		email.style.borderColor = "rgb(236, 19, 19)";
-		flag_input_error = true;
+		flag_input_error = false;
 	}
 	return flag_input_error;
 }
