@@ -3,6 +3,8 @@ list_of_commom_valid_domains = ['gmail','hotmail','yahoo,','aol','msn',
 
 list_of_commom_valid_tld = ['com','net','org','gov','edu','info','mil'];
 
+list_of_valid_events = ['CHUVA EXCESSIVA', 'GEADA', 'GRANIZO', 'SECA', 'VENDAVAL', 'RAIO'];
+
 //checa se uma eh composta pelo mesmo caracter
 function check_same_char(my_str) {
 	let first_char = my_str[0];
