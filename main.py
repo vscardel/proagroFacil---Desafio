@@ -14,7 +14,7 @@ def index():
 
 @app.route('/pesquisa')
 def pesquisa():
-	render_template('pesquisa.html')
+	return render_template('pesquisa.html')
 
 @app.route('/cadastro',methods = ['GET','POST'])
 def formulario_cadastro():
