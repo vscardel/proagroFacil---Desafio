@@ -132,7 +132,7 @@ function validate_form(e) {
 	let flag_input_error = true;
 	for (let i=0;i<list_of_form_inputs.length;i++) {
 		input = list_of_form_inputs[i];
-		console.log(input.name);
+		console.log(input.value);
 		if (input.value == '') {
 			//borda do input setada como vermelha para indicar erro
 			input.style.borderColor = "rgb(236, 19, 19)";
