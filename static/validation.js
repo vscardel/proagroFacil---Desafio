@@ -3,8 +3,6 @@ list_of_commom_valid_domains = ['gmail','hotmail','yahoo','aol','msn',
 
 list_of_commom_valid_tld = ['com','net','org','gov','edu','info','mil'];
 
-list_of_valid_events = ['CHUVA EXCESSIVA', 'GEADA', 'GRANIZO', 'SECA', 'VENDAVAL', 'RAIO'];
-
 //retorna lista com os inputs do formulario
 function return_input_list() {
 	let name = document.getElementById('fname');
