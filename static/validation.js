@@ -31,6 +31,7 @@ function validate_cpf(e) {
 			cont--;
 		}
 		let first_verification_result = (sum*10) % 11;
+		alert(first_verification_result);
 		if(first_verification_result != first_digit) {
 			return false;
 		}
@@ -42,6 +43,7 @@ function validate_cpf(e) {
 			cont--;
 		}
 		let second_verification_result = (sum*10) % 11;
+		alert(second_verification_result);
 		if(second_verification_result != second_digit) {
 			return false;
 		}
