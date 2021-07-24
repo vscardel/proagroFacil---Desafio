@@ -152,7 +152,7 @@ function validate_form(e) {
 	}
 	return flag_input_error;
 }
-
+//
 function validate(e) {
 	val_form = validate_form();
 	if (!val_form) {
