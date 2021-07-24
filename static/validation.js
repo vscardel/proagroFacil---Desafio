@@ -17,15 +17,6 @@ function return_input_list() {
 	return list_of_form_inputs;
 }
 
-
-function refresh_form() {
-	list_of_form_inputs = return_input_list();
-	for (let i=0;i<list_of_form_inputs.length;i++) {
-		input = list_of_form_inputs[i];
-		input.style.borderColor = "none";
-	}
-}
-
 //checa se uma string eh composta pelo mesmo caractere
 function check_same_char(my_str) {
 	let first_char = my_str[0];
@@ -163,7 +154,6 @@ function validate_form(e) {
 }
 //
 function validate(e) {
-	refresh_form();
 	val_form = validate_form();
 	if (!val_form) {
 		alert("Alguma informação está incorreta.");
