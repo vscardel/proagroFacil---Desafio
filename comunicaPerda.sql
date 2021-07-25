@@ -5,16 +5,17 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 
-DROP DATABASE IF EXISTS `heroku_ca53e8cabd3c7ad`;
-CREATE DATABASE IF NOT EXISTS `heroku_ca53e8cabd3c7ad`;
+DROP DATABASE IF EXISTS `heroku_8ab7278552ae92f`;
+CREATE DATABASE IF NOT EXISTS `heroku_8ab7278552ae92f`;
 
-USE `heroku_ca53e8cabd3c7ad`;
+USE `heroku_8ab7278552ae92f`;
 
 
 DROP TABLE IF EXISTS `comunicaPerda`;
 
 CREATE TABLE comunicaPerda(
 	id INT AUTO_INCREMENT,
+	suspeito INT,
 	nome VARCHAR(40),
 	email VARCHAR(255),
 	cpf VARCHAR(11),
