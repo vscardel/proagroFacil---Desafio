@@ -30,11 +30,11 @@ def formulario_cadastro():
 
 		insert_query = '''INSERT INTO comunicaPerda VALUES(''' + '''
 		0,''' + '"' + name + '",' + '"' + email + '",' + '"' + cpf + '",' + '''
-		"''' + latitude + '",' + '"' + longitude + '",' + '"' + tipo_lavoura + '",' + '''
-		" ''' + data + '",' + '"' + ocorrencia + '")'
-
-		cursor.execute(insert_query)
-		conn.commit()
+		''' + str(float(latitude)) + ',' + str(float(longitude)) + ',' + '"' + tipo_lavoura + '",' + '''
+		"''' + data + '",' + '"' + ocorrencia + '")'
+		print(insert_query)
+		# cursor.execute(insert_query)
+		# conn.commit()
 		return render_template('index.html')
 
 	return render_template('cadastro.html')
