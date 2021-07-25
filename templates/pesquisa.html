@@ -6,10 +6,16 @@
 
 #div_tabela_perdas{
 		position: relative;
-		margin-right:336px;
-		left: 338px;
+		width: 75%;
+		height: 100%;
 		border-radius: 5px;
 		padding: 20px;
+}
+
+#form_pesquisa{
+	position: relative;
+	width: 75%;
+	height: 100%;
 }
 
 
@@ -43,7 +49,7 @@ input[type=submit] {
 
 <div id = "div_tabela_perdas">
 
-	 <form action="#", method="POST">
+	 <form id = "form_pesquisa" action="#", method="POST">
 	    <label for="fname">Pesquisa por CPF</label>
 	    <input type="text" id="fProcuraCPF" name="procuraCPF" placeholder="CPF",value="">
 	    <input type="submit" value="Pesquisa">
