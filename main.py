@@ -24,11 +24,19 @@ def formulario_cadastro():
 		cpf = request.form['cpf']
 		latitude = request.form['latitude']
 		longitude = request.form['longitude']
-		lavoura = request.form['lavoura']
+		tipo_lavoura = request.form['lavoura']
 		data = request.form['data']
-		# insert_query = '''INSERT INTO comunicaPerda Values(''' + '''
-		# 0,''' + '"' + name + ',"' + '"' + email + '",' + '"' + cpf + '".' + '''
+		ocorrencia = request.form['ocorrencia']
+
+		insert_query = '''INSERT INTO comunicaPerda VALUES(''' + '''
+		0,''' + '"' + name + '",' + '"' + email + '",' + '"' + cpf + '",' + '''
+		"''' + latitude + '",' + '"' + longitude + '",' + '"' + tipo_lavoura + '",' + '''
+		" ''' + data + '",' + '"' + ocorrencia + '")'
+
+		cursor.execute(insert_query)
+		conn.commit()
 		return render_template('index.html')
+
 	return render_template('cadastro.html')
 
 
