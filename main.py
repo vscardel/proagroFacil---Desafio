@@ -26,9 +26,8 @@ def formulario_cadastro():
 		longitude = request.form['longitude']
 		lavoura = request.form['lavoura']
 		data = request.form['data']
-		insert_query = '''INSERT INTO comunicaPerda Values(''' + '''
-		0,''' + '"' + name + ',"' + '"' + email + '",' + '"' + cpf + '".' + '''
-		
+		# insert_query = '''INSERT INTO comunicaPerda Values(''' + '''
+		# 0,''' + '"' + name + ',"' + '"' + email + '",' + '"' + cpf + '".' + '''
 		return render_template('index.html')
 	return render_template('cadastro.html')
 
