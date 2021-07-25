@@ -20,7 +20,15 @@ def pesquisa():
 def formulario_cadastro():
 	if request.method == 'POST':
 		name = request.form['firstname']
-		insert_query = "INSERT INTO comunicaPerda Values("
+		email = request.form['email']
+		cpf = request.form['cpf']
+		latitude = request.form['latitude']
+		longitude = request.form['longitude']
+		lavoura = request.form['lavoura']
+		data = request.form['data']
+		insert_query = '''INSERT INTO comunicaPerda Values(''' + '''
+		0,''' + '"' + name + ',"' + '"' + email + '",' + '"' + cpf + '".' + '''
+		
 		return render_template('index.html')
 	return render_template('cadastro.html')
 

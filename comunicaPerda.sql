@@ -5,10 +5,10 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 
-DROP DATABASE IF EXISTS `heroku_8ab7278552ae92f`;
-CREATE DATABASE IF NOT EXISTS `heroku_8ab7278552ae92f`;
+DROP DATABASE IF EXISTS `heroku_42e6ce0de3a9265`;
+CREATE DATABASE IF NOT EXISTS `heroku_42e6ce0de3a9265`;
 
-USE `heroku_8ab7278552ae92f`;
+USE `heroku_42e6ce0de3a9265`;
 
 
 DROP TABLE IF EXISTS `comunicaPerda`;
@@ -19,7 +19,8 @@ CREATE TABLE comunicaPerda(
 	nome VARCHAR(40),
 	email VARCHAR(255),
 	cpf VARCHAR(11),
-	coordenada POINT,
+	latitude DECIMAL(8,6),
+	longitude DECIMAL(9,6),
 	tipo VARCHAR(20),
 	data DATE,
 	evento VARCHAR(20),
