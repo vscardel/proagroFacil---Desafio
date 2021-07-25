@@ -4,7 +4,7 @@
 
 <style>
 
-#div_tabela_perdas{
+#tela_pesquisa{
 		position: relative;
 		margin-left:25%;
 		border-radius: 5px;
@@ -33,6 +33,11 @@ input[type=submit] {
   cursor: pointer;
 }
 
+#form_pesquisa{
+	margin-left: auto;
+	margin-right: auto;
+}
+
 #tabela_pesquisa{
 	margin-left: auto;
 	margin-right: auto;
@@ -47,9 +52,9 @@ input[type=submit] {
 
 {%block body%}
 
-<div id = "div_tabela_perdas">
+<div id = "tela_pesquisa">
 
-	 <form action="#", method="POST">
+	 <form id = "form_pesquisa" action="#", method="POST">
 	    <label for="fname">Pesquisa por CPF</label>
 	    <input type="text" id="fProcuraCPF" name="procuraCPF" placeholder="CPF",value="">
 	    <input type="submit" value="Pesquisa">
