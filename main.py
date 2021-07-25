@@ -32,9 +32,9 @@ def formulario_cadastro():
 		0,''' + '"' + name + '",' + '"' + email + '",' + '"' + cpf + '",' + '''
 		''' + str(float(latitude)) + ',' + str(float(longitude)) + ',' + '"' + tipo_lavoura + '",' + '''
 		"''' + data + '",' + '"' + ocorrencia + '")'
-		print(insert_query)
-		# cursor.execute(insert_query)
-		# conn.commit()
+		
+		cursor.execute(insert_query)
+		conn.commit()
 		return render_template('index.html')
 
 	return render_template('cadastro.html')
