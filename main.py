@@ -19,7 +19,7 @@ def pesquisa():
 @app.route('/cadastro',methods = ['GET','POST'])
 def formulario_cadastro():
 	if request.method == 'POST':
-		name = request.form['fname']
+		name = request.form['firstname']
 		insert_query = "INSERT INTO comunicaPerda Values("
 		return render_template('index.html')
 	return render_template('cadastro.html')
