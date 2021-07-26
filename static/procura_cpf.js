@@ -1,7 +1,6 @@
 // seleciona o cpf desejado escondendo os cpfs não desejados
 // na tabela
 
-
 function procuraPorCPF(){
 	cpf = document.getElementById('fProcuraCPF');
 	if(cpf.value == "") {
