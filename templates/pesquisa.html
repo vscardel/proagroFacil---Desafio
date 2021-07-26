@@ -4,6 +4,7 @@
 
 <script src="{{url_for('static', filename='highlight_table.js')}}"></script>
 
+<script src="{{url_for('static', filename='procura_cpf.js')}}"></script>
 
 <style>
 
@@ -28,7 +29,7 @@ input[type=submit] {
   cursor: pointer;
 }
 
-#form_pesquisa{
+#div_pesquisa{
 		position: relative;
 		width: 76%;
 		margin-left: 26%;
@@ -51,11 +52,11 @@ input[type=submit] {
 
 <div id = "tela_pesquisa">
 
-	 <form id = "form_pesquisa" action="#", method="POST">
+	 <div id = "div_pesquisa">
 	    <label for="fname">Pesquisa por CPF</label>
 	    <input type="text" id="fProcuraCPF" name="procuraCPF" placeholder="CPF",value="">
-	    <input type="submit" value="Pesquisa">
-	 </form>
+	    <input type="submit" value="Pesquisa" onclick="procuraPorCPF()">
+	 </div>
 
 	<table id="tabela_pesquisa" class = "w3-table">
 		<tr>
