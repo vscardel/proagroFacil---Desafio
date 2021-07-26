@@ -47,43 +47,51 @@
 
 <div id="div_form">
 	
-  <form action="/cadastro", method="POST", onsubmit="return validate(event)">
+<form action="/cadastro", method="POST", onsubmit="return validate(event)">
 
-    <label for="fname">Nome Completo</label>
-    <input type="text" id="fname" name="name" placeholder="Seu nome",value="">
+	<label for="fname">Nome Completo</label>
+	<input type="text" id="fname" name="name" placeholder="Seu nome",value="">
 
-    <label for="femail">E-mail</label>
-    <input type="text" id="femail" name="email" placeholder="Seu email",value="">
+	<label for="femail">E-mail</label>
+	<input type="text" id="femail" name="email" placeholder="Seu email",value="">
 
-    <label for="fcpf">CPF</label>
-    <input type="text" id="fcpf" name="cpf" placeholder="Seu CPF",value="">
+	<label for="fcpf">CPF</label>
+	<input type="text" id="fcpf" name="cpf" placeholder="Seu CPF",value="">
 
-    <label for="flat">Latitude</label>
-    <input type="text" id="flat" name="latitude" placeholder="Latitude",value="">
+	<label for="flat">Latitude</label>
+	<input type="text" id="flat" name="latitude" placeholder="Latitude",value="">
 
-    <label for="flong">Longitude</label>
-    <input type="text" id="flong" name="longitude" placeholder="Longitude",value="">
+	<label for="flong">Longitude</label>
+	<input type="text" id="flong" name="longitude" placeholder="Longitude",value="">
 
-    <label for="flav">Lavoura</label>
-    <input type="text" id="flav" name="lavoura" placeholder="Lavoura",value="">
+	<label for="flav">Lavoura</label>
+	<input type="text" id="flav" name="lavoura" placeholder="Lavoura",value="">
 
-    <label for="focorr">Ocorrência</label>
-    <select id="focorr" name="ocorrencia">
+	<label for="focorr">Ocorrência</label>
+	<select id="focorr" name="ocorrencia">
 		  <option value="CHUVA EXCESSIVA">CHUVA EXCESSIVA</option>
 		  <option value="GEADA">GEADA</option>
 		  <option value="GRANIZO">GRANIZO</option>
 		  <option value="SECA">SECA</option>
 		  <option value="VENDAVAL">VENDAVAL</option>
-		  <option value="RAIO">SECA</option>
+		  <option value="RAIO">RAIO</option>
 	</select>
 
-    <label for="fdate">Data</label> <br> 
-    <input type="date" id="fdate" name="data",value="">
+	<label for="fdate">Data</label> <br> 
+	<input type="date" id="fdate" name="data",value="">
 
-    <input type="submit" value="Enviar">
+	<input type="submit" value="Enviar">
 
-  </form>
+</form>
+{{is_suspeita|pprint}}
 
 </div>
+
+{%if is_suspeita%}
+	<script type="text/javascript">
+		alert("Essa ocorrência é suspeita. Favor entrar em contato com o produtor para verificar a situação");
+		window.location.replace("/pesquisa");
+	</script>
+{%endif%}
 
 {%endblock%}
