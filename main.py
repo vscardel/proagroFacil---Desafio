@@ -4,7 +4,7 @@ import csv
 import pymysql
 from app import app
 from db import mysql
-from flask import Flask, Response, render_template,request,url_for
+from flask import Flask, Response, render_template,request,url_for,redirect
 
 conn = mysql.connect()
 cursor = conn.cursor()
@@ -87,20 +87,89 @@ def formulario_cadastro():
 			1,''' + '"' + name + '",' + '"' + email + '",' + '"' + cpf + '",' + '''
 			''' + str(float(latitude)) + ',' + str(float(longitude)) + ',' + '"' + tipo_lavoura + '",' + '''
 			"''' + data + '",' + '"' + evento + '")'
+			cursor.execute(insert_query)
+			conn.commit()
 			return render_template('cadastro.html',is_suspeita = is_suspeita)
+
 		#insere 0 no campo de suspeita
 		else:
 			insert_query = '''INSERT INTO comunicaPerda VALUES(''' + "0," + '''
 			0,''' + '"' + name + '",' + '"' + email + '",' + '"' + cpf + '",' + '''
 			''' + str(float(latitude)) + ',' + str(float(longitude)) + ',' + '"' + tipo_lavoura + '",' + '''
 			"''' + data + '",' + '"' + evento + '")'
-			return render_template('pesquisa.html')
+			cursor.execute(insert_query)
+			conn.commit()
+			return redirect('/pesquisa')
 		
-		cursor.execute(insert_query)
-		conn.commit()
 
 	return render_template('cadastro.html')
 
+@app.route('/delete/<int:id>')
+def delete(id):
+	delete_query = "DELETE FROM comunicaPerda WHERE id = " + str(id)
+	cursor.execute(delete_query)
+	conn.commit()
+	return redirect('/pesquisa')
+
+@app.route('/update/<int:id>', methods = ['GET','POST'])
+def update(id):
+
+	#com o intuito de deixar os valores antigos no formulário
+	#para não precisar preencher todos os dados novamente
+	get_old_values_query = "SELECT * FROM comunicaPerda WHERE id = " + str(id)
+	cursor.execute(get_old_values_query)
+	old_values = cursor.fetchall()
+
+	if request.method == 'POST':
+
+		name = request.form['name']
+		email = request.form['email']
+		cpf = request.form['cpf']
+		latitude = request.form['latitude']
+		longitude = request.form['longitude']
+		tipo_lavoura = request.form['lavoura']
+		data = request.form['data']
+		evento = request.form['ocorrencia']
+
+		#necessario pois às vezes a atualização pode tornar a ocorrencia
+		#suspeita
+		ocorrencias_mesma_data = retorna_ocorrencias_mesma_data(data)
+		is_suspeita = determina_ocorrencia_suspeita(
+			float(latitude), float(longitude),evento,ocorrencias_mesma_data)
+
+		if is_suspeita:
+			update_query = '''UPDATE comunicaPerda
+						SET nome = ''' + '"' + name + '",' + '''
+						suspeito = 1 ''' + ',' + '''
+						email = ''' + '"' + email + '",' + '''
+						cpf = ''' + '"' + cpf + '",' + '''
+						latitude = ''' + '"' + latitude + '",' + '''
+						longitude = ''' + '"' + longitude + '",' +'''
+						tipo = ''' + '"' + tipo_lavoura + '",' + '''
+						data = ''' + '"' + data + '",'+ '''
+						evento = ''' + '"' + evento + '"' + '''
+						WHERE id = ''' + str(id)
+			cursor.execute(update_query)
+			conn.commit()
+			return render_template('cadastro.html',is_suspeita = is_suspeita)
+
+		else:
+			update_query = '''UPDATE comunicaPerda
+						SET nome = ''' + '"' + name + '",' + '''
+						suspeito = 0 ''' + ',' + '''
+						email = ''' + '"' + email + '",' + '''
+						cpf = ''' + '"' + cpf + '",' + '''
+						latitude = ''' +  latitude + ',' + '''
+						longitude = ''' + longitude + ',' +'''
+						tipo = ''' + '"' + tipo_lavoura + '",' + '''
+						data = ''' + '"' + data + '",'+ '''
+						evento = ''' + '"' + evento + '"' + '''
+						WHERE id = ''' + str(id)
+			cursor.execute(update_query)
+			conn.commit()
+			return redirect('/pesquisa')
+
+	return render_template('update.html',id = id, old_values = old_values)
 
 if __name__ == '__main__':
 	app.run(debug=True)

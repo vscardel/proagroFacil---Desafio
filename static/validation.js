@@ -126,6 +126,7 @@ function validate_form(e) {
 	let flag_input_error = true;
 	for (let i=0;i<list_of_form_inputs.length;i++) {
 		input = list_of_form_inputs[i];
+		console.log(input.value)
 		if (input.name == 'cpf')
 			cpf = input;
 		if(input.name == 'email')
