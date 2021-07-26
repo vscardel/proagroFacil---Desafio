@@ -151,7 +151,7 @@ def update(id):
 						WHERE id = ''' + str(id)
 			cursor.execute(update_query)
 			conn.commit()
-			return render_template('cadastro.html',is_suspeita = is_suspeita)
+			return render_template('update.html',is_suspeita = is_suspeita)
 
 		else:
 			update_query = '''UPDATE comunicaPerda
