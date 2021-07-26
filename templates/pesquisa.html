@@ -35,8 +35,8 @@ input[type=submit] {
 	position: relative;
 	width: 74%;
 	margin-left: 26%;
+	overflow-y:scroll;
 }
-
 
 
 </style>
@@ -66,35 +66,44 @@ input[type=submit] {
 			<th></th>
 			<th></th>
 		</tr>
-		<tr>
-			<td>
-				1
-			</td>
-			<td>
-				07154161540
-			</td>
-			<td>
-				Jorge Augusto
-			</td>
-			<td>
-				Milho
-			</td>
-			<td>
-				05/08/1996
-			</td>
-			<td>
-				RAIO
-			</td>
+
+		{%for ocorrencia in todas_ocorrencias%}
+			<tr>
 				<td>
-				NAO
-			</td>
-			<td>
-				<a href = "#">Deletar</a>
-			</td>
-			<td>
-				<a href = "#">Atualizar</a>
-			</td>
-		</tr>
+					{{ocorrencia[0]}}
+				</td>
+				<td>
+					{{ocorrencia[4]}}
+				</td>
+				<td>
+					{{ocorrencia[2]}}
+				</td>
+				<td>
+					{{ocorrencia[7]}}
+				</td>
+				<td>
+					{{ocorrencia[8]}}
+				</td>
+				<td>
+					{{ocorrencia[9]}}
+				</td>
+				<td>
+					{%if ocorrencia[1] == 1%}
+						SIM
+					{%else%}
+						NÃO
+					{%endif%}
+				</td>
+				<td>
+					<a href = "#">Deletar</a>
+				</td>
+				<td>
+					<a href = "#">Atualizar</a>
+				</td>
+			</tr>
+		{%endfor%}
+		
+
 	</table>
 
 </div>

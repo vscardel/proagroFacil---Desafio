@@ -19,7 +19,11 @@ def index():
 
 @app.route('/pesquisa')
 def pesquisa():
-	return render_template('pesquisa.html')
+	return_todas_query = "SELECT * FROM comunicaPerda"
+	cursor.execute(return_todas_query)
+	todas_ocorrencias = cursor.fetchall()
+	return render_template('pesquisa.html',
+	todas_ocorrencias = todas_ocorrencias)
 
 # Usa a fórmula de‘haversine’ para calcular a 
 # distancia entre pontos na forma (lat,long) 
@@ -53,12 +57,10 @@ def determina_ocorrencia_suspeita(lat_entrada,long_entrada,
 	evento,ocorrencias_mesma_data):
 	global max_dist
 	for ocorrencia in ocorrencias_mesma_data:
-		print(ocorrencia)
 		lat_ocorr = float(ocorrencia[0])
 		long_ocorr = float(ocorrencia[1])
 		dist = calcula_distancia(lat_entrada,lat_ocorr,
 		long_entrada,long_ocorr)
-		print(str(ocorrencia[2]),str(evento))
 		if(dist <= max_dist) and (str(ocorrencia[2]) != str(evento) ):
 			return True
 	return False
@@ -85,20 +87,17 @@ def formulario_cadastro():
 			1,''' + '"' + name + '",' + '"' + email + '",' + '"' + cpf + '",' + '''
 			''' + str(float(latitude)) + ',' + str(float(longitude)) + ',' + '"' + tipo_lavoura + '",' + '''
 			"''' + data + '",' + '"' + evento + '")'
+			return render_template('cadastro.html',is_suspeita = is_suspeita)
 		#insere 0 no campo de suspeita
 		else:
 			insert_query = '''INSERT INTO comunicaPerda VALUES(''' + "0," + '''
 			0,''' + '"' + name + '",' + '"' + email + '",' + '"' + cpf + '",' + '''
 			''' + str(float(latitude)) + ',' + str(float(longitude)) + ',' + '"' + tipo_lavoura + '",' + '''
 			"''' + data + '",' + '"' + evento + '")'
+			return render_template('pesquisa.html')
 		
 		cursor.execute(insert_query)
 		conn.commit()
-
-		if not is_suspeita:
-			return render_template('pesquisa.html')
-		else:
-			return render_template('cadastro.html',is_suspeita = is_suspeita)
 
 	return render_template('cadastro.html')
 

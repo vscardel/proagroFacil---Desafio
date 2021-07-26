@@ -1,2 +1,0 @@
-1) terminar de deixar o front responsivo
-2) implementar o back end
