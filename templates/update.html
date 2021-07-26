@@ -88,7 +88,7 @@
 {%if is_suspeita%}
 	<script type="text/javascript">
 		alert("Essa ocorrência é suspeita. Favor entrar em contato com o produtor para verificar a situação");
-		window.location.replace("/pesquisa");
+		setTimeout(window.location.replace("/pesquisa"),1000);
 	</script>
 {%endif%}
 
