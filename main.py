@@ -128,6 +128,7 @@ def update(id):
 		latitude = request.form['latitude']
 		longitude = request.form['longitude']
 		tipo_lavoura = request.form['lavoura']
+		print(tipo_lavoura)
 		data = request.form['data']
 		evento = request.form['ocorrencia']
 

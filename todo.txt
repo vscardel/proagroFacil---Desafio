@@ -1,0 +1,2 @@
+1) adicionar verificação das latitudes e longitudes
+2) investigar o bug nos updates
