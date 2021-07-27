@@ -1,9 +1,7 @@
 # proagroFacil
 
 **Pré requisitos**: Ler o arquivo requirements.txt  
-
-**Deploy**: Este desafio está em https://proagrofacil.herokuapp.com/. O resto do documento descreve aspectos técnicos e como preparar o ambiente para rodar o código no localhost caso assim se deseje.  
-
+ 
 **Banco de Dados**:	
 * O banco escolhido foi o MySQL  
 * Para conectar com o banco é necessário criá-lo. Para isso, basta seguir as próximas etapas:  
@@ -24,3 +22,5 @@
 * No diretório do projeto, basta rodar o seguinte comando:
 * Python3 app.py
 * Daí é so entrar em localhost:5000 no navegador de sua preferência e utilizar o aplicativo.
+
+**Deploy**: Este desafio está em https://proagrofacil.herokuapp.com/. O funcionamento não é perfeito pois o servidor se encontra muitas vezes indisponível, então **não é recomendado testar a aplicação por esse link, e sim pelo prório localhost.**
