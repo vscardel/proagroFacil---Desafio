@@ -17,6 +17,9 @@ function procuraPorCPF(){
 				linhas[i].style.display = "none";  
 			}
 			else {
+				if(linhas[i].style.display == "none") {
+					linhas[i].style.display = "table-row"; 
+				}
 				flag_find = true;
 			}
 		}
