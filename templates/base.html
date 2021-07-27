@@ -9,17 +9,55 @@
 	<meta name="HandheldFriendly" content="true">
 
 	{%block head%}{%endblock%}
-</head> 
+
+<style>
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background-color: #49a2f5;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #7b8494;
+  color: white;
+}
+
+#title{
+	margin-left: 4%;
+}
+</style>
+
+</head>
+
+<body>
 
 
 
 <!-- Sidebar herdada por todos os fronts -->
-	<div class="w3-sidenav w3-light-grey w3-bar-block" style="width:25%; height: 100%; position: fixed;">
-		<h3 class="w3-bar-item">Menu</h3>
-		<a id="item_1"  href="/" class="w3-bar-item w3-button w3-hover-text-white ">Página Principal</a>
-		<a id="item_2"  href="/cadastro" class="w3-bar-item w3-button w3-hover-text-white">Cadastro</a>
-		<a id="item_2"  href="/pesquisa" class="w3-bar-item w3-button w3-hover-text-white">Pesquisa</a>
-	</div>
+	<ul>
+	  <h3 id = "title">Menu</h3>
+	  <li><a  href="/">Página Principal</a></li>
+	  <li><a href="/cadastro">Cadastro</a></li>
+	  <li><a href="/pesquisa">Pesquisa</a></li>
+	</ul>
 	
 	{%block body%}
 	{%endblock%}

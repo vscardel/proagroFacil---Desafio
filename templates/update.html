@@ -5,25 +5,36 @@
 <script src="{{url_for('static', filename='validation.js')}}"></script>
 
 <style type="text/css">
+
+	body{
+		background-color: #ebedf0;
+	}
+
+	#titulo{
+		margin-left: 35%;
+	}
+
 	input[type=text], select {
-	  width: 100%;
+	  width: 50%;
 	  padding: 12px 20px;
 	  margin: 8px 0;
 	  display: inline-block;
 	  border: 1px solid #ccc;
 	  border-radius: 4px;
 	  box-sizing: border-box;
+	  margin-left: 25%;
 	}
 
 	input[type=submit] {
-	  width: 100%;
-	  background-color: #4CAF50;
+	  width: 20%;
+	  background-color: #49a2f5;
 	  color: white;
 	  padding: 14px 20px;
 	  margin: 8px 0;
 	  border: none;
 	  border-radius: 4px;
 	  cursor: pointer;
+	  margin-left: 40%;
 	}
 
 	input[type=submit]:hover {
@@ -35,9 +46,14 @@
 		width: 75%;
 		margin-left: 25%;
 		border-radius: 5px;
-		background-color: #358285;
 		padding: 20px;
 	}
+
+	#data_input{
+		margin-left: 25%;
+	}
+	
+
 </style>
 
 {%endblock%}
@@ -49,25 +65,20 @@
 	
 <form action="/update/{{id}}", method="POST", onsubmit="return validate(event)">
 
-	<label for="fname">Nome Completo</label>
+	<h3 id="titulo">Atualização de ocorrência</h3>
+
 	<input value="{{old_values[0][2]}}" type="text" id="fname" name="name" placeholder="{{old_values[0][2]}}" >
 
-	<label for="femail">E-mail</label>
 	<input value = "{{old_values[0][3]}}"type="text" id="femail" name="email" placeholder="Seu email">
 
-	<label for="fcpf">CPF</label>
 	<input value="{{old_values[0][4]}}" type="text" id="fcpf" name="cpf" placeholder="Seu CPF">
 
-	<label for="flat">Latitude</label>
 	<input value="{{old_values[0][5]}}" type="text" id="flat" name="latitude" placeholder="Latitude">
 
-	<label for="flong">Longitude</label>
 	<input value="{{old_values[0][6]}}" type="text" id="flong" name="longitude" placeholder="Longitude">
 
-	<label for="flav">Lavoura</label>
 	<input value="{{old_values[0][7]}}" type="text" id="flav" name="lavoura" placeholder="Lavoura">
 
-	<label for="focorr">Ocorrência</label>
 	<select id="focorr" name="ocorrencia">
 		  <option value="CHUVA EXCESSIVA">CHUVA EXCESSIVA</option>
 		  <option value="GEADA">GEADA</option>
@@ -91,9 +102,8 @@
 		}
 		console.log("oi");
 	</script>
-
-	<label for="fdate">Data</label> <br> 
-	<input value="{{old_values[0][8]}}" type="date" id="fdate" name="data">
+	<br>
+	<input id = "data_input" value="{{old_values[0][8]}}" type="date" id="fdate" name="data">
 
 	<input type="submit" value="Enviar">
 

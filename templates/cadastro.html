@@ -6,25 +6,34 @@
 <script src="{{url_for('static', filename='validation.js')}}"></script>
 
 <style type="text/css">
+
+	body{
+		background-color: #ebedf0;
+	}
+	#data_input{
+		margin-left: 25%;
+	}
 	input[type=text], select {
-	  width: 100%;
+	  width: 50%;
 	  padding: 12px 20px;
 	  margin: 8px 0;
 	  display: inline-block;
 	  border: 1px solid #ccc;
 	  border-radius: 4px;
 	  box-sizing: border-box;
+	  margin-left: 25%;
 	}
 
 	input[type=submit] {
-	  width: 100%;
-	  background-color: #4CAF50;
+	  width: 20%;
+	  background-color: #49a2f5;
 	  color: white;
 	  padding: 14px 20px;
 	  margin: 8px 0;
 	  border: none;
 	  border-radius: 4px;
 	  cursor: pointer;
+	  margin-left: 40%;
 	}
 
 	input[type=submit]:hover {
@@ -36,8 +45,12 @@
 		width: 75%;
 		margin-left: 25%;
 		border-radius: 5px;
-		background-color: #358285;
 		padding: 20px;
+		height: 100%;
+	}
+
+	#titulo{
+		margin-left: 35%;
 	}
 </style>
 
@@ -48,26 +61,26 @@
 <div id="div_form">
 	
 <form action="/cadastro", method="POST", onsubmit="return validate(event)">
+	<h3 id="titulo">Cadastro de Ocorrência</h3>
+	
+	<input type="text" id="fname" name="name" placeholder="nome:",value="">
 
-	<label for="fname">Nome Completo</label>
-	<input type="text" id="fname" name="name" placeholder="ex: Victor Cardel",value="">
+	
+	<input type="text" id="femail" name="email" placeholder="email: username@gmail.com",value="">
 
-	<label for="femail">E-mail</label>
-	<input type="text" id="femail" name="email" placeholder="ex: vscardel@gmail.com",value="">
+	
+	<input type="text" id="fcpf" name="cpf" placeholder="cpf: 41960500007",value="">
 
-	<label for="fcpf">CPF</label>
-	<input type="text" id="fcpf" name="cpf" placeholder="ex:41960500007",value="">
+	
+	<input type="text" id="flat" name="latitude" placeholder="latitude: 34.123456",value="">
 
-	<label for="flat">Latitude</label>
-	<input type="text" id="flat" name="latitude" placeholder="ex:34.123456",value="">
+	
+	<input type="text" id="flong" name="longitude" placeholder="longitude: -179.123456",value="">
 
-	<label for="flong">Longitude</label>
-	<input type="text" id="flong" name="longitude" placeholder="ex:-179.123456",value="">
+	
+	<input type="text" id="flav" name="lavoura" placeholder="Tipo da Lavoura: Milho",value="">
 
-	<label for="flav">Lavoura</label>
-	<input type="text" id="flav" name="lavoura" placeholder="ex: Milho",value="">
-
-	<label for="focorr">Ocorrência</label>
+	
 	<select id="focorr" name="ocorrencia">
 		  <option value="CHUVA EXCESSIVA">CHUVA EXCESSIVA</option>
 		  <option value="GEADA">GEADA</option>
@@ -77,9 +90,9 @@
 		  <option value="RAIO">RAIO</option>
 	</select>
 
-	<label for="fdate">Data</label> <br> 
-	<input type="date" id="fdate" name="data",value="">
-
+	<br>
+	<input id = "data_input" type="date" id="fdate" name="data",value="">
+	<br>
 	<input type="submit" value="Enviar">
 
 </form>
