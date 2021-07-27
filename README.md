@@ -26,3 +26,6 @@
 * Em /proagroFacil, basta rodar o seguinte comando:
 * _Python3 main.py_
 * Daí é so entrar em localhost:5000 no navegador de sua preferência e utilizar o aplicativo.
+
+**Considerações acerca da ocorrência suspeita**
+* Em relação às ocorrências suspeitas, a decisão foi de avisar ao analista e armazenar no banco com uma flag de suspeita. A ocorrência é visualzada na tabela com uma cor distinta de ocorrências não suspeitas. O pensamento por trás dessa decisão é que cabe ao analista, após verificar a situação, decidir se a ocorrência precisa ser revista ou deletada.
