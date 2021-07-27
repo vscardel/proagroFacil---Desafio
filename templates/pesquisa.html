@@ -8,6 +8,16 @@
 
 <style>
 
+.button {
+	text-decoration: none;
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
 input[type=text], select {
   width: 97%;
   padding: 12px 20px;
@@ -41,6 +51,12 @@ input[type=submit] {
 	margin-left: 26%;
 	overflow-y:scroll;
 }
+
+#refresh_pesquisa {
+	position: relative;
+	margin-left: 58.7%;
+}
+
 
 
 </style>
@@ -111,6 +127,11 @@ input[type=submit] {
 	</table>
 
 	<script>highlight_table();</script>
+	<br>
+	<!-- aparece quando a pesquisa por cpf é feita -->
+	<div id = "refresh_pesquisa" style = "display: none">
+		<a style="margin-top: 15%" class = "button" id = "link_recarrega" href="/pesquisa">Recarregar</a>
+	</div>
 
 </div>
 	

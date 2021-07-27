@@ -32,5 +32,8 @@ function procuraPorCPF(){
 			linhas[i].style.display = "table-row";  	
 		}
 	}
+
+	botao_recarrega = document.getElementById('refresh_pesquisa');
+	botao_recarrega.style.display = "inline";
 }
 
