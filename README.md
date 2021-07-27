@@ -1,5 +1,8 @@
 # proagroFacil
 
+
+**Deploy**: Este desafio está em https://proagrofacil.herokuapp.com/
+
 **Assume-se acesso a um terminal de algum SO unix-like**
 
 **Pré requisitos**: em  /proagroFacil rode o comando _pip3 -r requirements.txt_
@@ -23,5 +26,3 @@
 * Em /proagroFacil, basta rodar o seguinte comando:
 * _Python3 main.py_
 * Daí é so entrar em localhost:5000 no navegador de sua preferência e utilizar o aplicativo.
-
-**Deploy**: Este desafio está em https://proagrofacil.herokuapp.com/. O funcionamento não é perfeito pois o servidor se encontra muitas vezes indisponível, então **não é recomendado testar a aplicação por esse link, e sim pelo prório localhost.**
