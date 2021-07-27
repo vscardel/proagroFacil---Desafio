@@ -10,7 +10,7 @@ function highlight_table(){
 				linhas[i].style.backgroundColor = "rgba(203,30,90,0.5)";
 			}
 			else if(colunas[6].textContent.trim() == "NÃO") {
-				linhas[i].style.backgroundColor = "rgba(143,202,124,0.5)";
+				linhas[i].style.backgroundColor = "##49a2f5";
 			}
 		}
 	}
