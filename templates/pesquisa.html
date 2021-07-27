@@ -59,6 +59,8 @@ input[type=submit] {
 
 
 
+
+
 </style>
 
 
@@ -115,10 +117,10 @@ input[type=submit] {
 					{%endif%}
 				</td>
 				<td>
-					<a href = "/delete/{{ocorrencia[0]}}">Deletar</a>
+					<a id="botao_delete" href = "/delete/{{ocorrencia[0]}}">Deletar</a>
 				</td>
 				<td>
-					<a href = "/update/{{ocorrencia[0]}}">Atualizar</a>
+					<a id="botao_update" href = "/update/{{ocorrencia[0]}}">Atualizar</a>
 				</td>
 			</tr>
 		{%endfor%}

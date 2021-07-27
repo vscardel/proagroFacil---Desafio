@@ -77,6 +77,21 @@
 		  <option value="RAIO">RAIO</option>
 	</select>
 
+	<!-- seleciona o elemento antigo do select -->
+	<script type="text/javascript">
+		let select = document.getElementById("focorr");
+		for(let i=0;i<select.length;i++) {
+			let current_value = select[i].value;
+			if(select[i].selected) {
+				select[i].removeAttribute("selected");
+			}
+			if(current_value == "{{old_values[0][9]}}") {
+				select[i].setAttribute("selected", current_value);
+			}
+		}
+		console.log("oi");
+	</script>
+
 	<label for="fdate">Data</label> <br> 
 	<input value="{{old_values[0][8]}}" type="date" id="fdate" name="data">
 
