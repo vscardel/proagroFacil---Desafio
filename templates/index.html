@@ -3,14 +3,21 @@
 {%block head%}
 
 <style>
-#div_front_page{
+
+
+#front_page_img{
 	position: relative;
-	width: 75%;
+	margin-left: 38%;
+	margin-top: 6%;
 	height: 100%;
-	margin-left: 25%;
-	text-align: center;
+	width: 50%;
 }
 
+#texto_index{
+	margin-left: 51%;
+	margin-top: 2%;
+	font-size: 20px;
+}
 
 </style>
 
@@ -18,6 +25,6 @@
 {%endblock%}
 
 {%block body%}
-
-
+	<img id = "front_page_img" src="{{url_for('static', filename='softfocus')}}"> 
+	<div id="texto_index">Use o menu para selecionar as opções</div>
 {%endblock%}
