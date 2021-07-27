@@ -1,2 +1,0 @@
-1) investigar o bug nos updates
-2) Modificar os avisos e redirects das ocorrencias suspeitas
