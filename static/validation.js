@@ -119,6 +119,51 @@ function validate_email(e) {
 	
 }
 
+//retorna a parte de um número de ponto flutuante
+//antes do ponto
+function get_prefix_float(number) {
+	var prefix = "";
+	var find_point = false;
+	for(i=0;i<number.length;i++) {
+		//desconsidera o sinal para montar o prefixo
+		if(number[i] == '.' ) {
+			find_point = true;
+		}
+		if(!find_point) {
+			prefix += number[i];
+		}
+		else {
+			break;
+		}
+	}
+	return prefix;
+}
+
+function validate_lat_long(e) {
+	let latitude = document.getElementById('flat').value;
+	let longitude = document.getElementById('flong').value;
+	//desconsidera o '-' em casos de números negativos
+	if(latitude[0] == '-')
+		latitude = latitude.slice(1);
+	if(longitude[0] == '-')
+		longitude = longitude.slice(1);
+	//latitude possui no maximo 8 digitos e a longitude
+	//no maximo 9, a checagem considera a presença do '.'
+	//na string
+	if(latitude.length > 9 || longitude.length > 10) {
+		return false;
+	}
+	prefix_lat = get_prefix_float(latitude);
+	prefix_long = get_prefix_float(longitude);
+	console.log(prefix_lat);
+	console.log(prefix_long);
+	//a latitude vai de -90 à 90 e a longitude de -180 à 180
+	if(prefix_lat.length > 2 || prefix_long.length > 3) {
+		return false;
+	}
+	
+}
+
 function validate_form(e) {
 	var cpf,email;
 	list_of_form_inputs = return_input_list();
@@ -126,11 +171,14 @@ function validate_form(e) {
 	let flag_input_error = true;
 	for (let i=0;i<list_of_form_inputs.length;i++) {
 		input = list_of_form_inputs[i];
-		console.log(input.value)
 		if (input.name == 'cpf')
 			cpf = input;
 		if(input.name == 'email')
 			email = input;
+		if(input.name == 'latitude')
+			latitude = input;
+		if(input.name == 'longitude')
+			longitude = input;
 		if (input.value == '') {
 			//borda do input setada como vermelha para indicar erro
 			input.style.borderColor = "rgb(236, 19, 19)";
@@ -141,6 +189,7 @@ function validate_form(e) {
 	//validação de email e cpf
 	bool_cpf = validate_cpf();
 	bool_email = validate_email();
+	bool_lat_long = validate_lat_long();
 	if(bool_cpf == false) {
 		cpf.style.borderColor = "rgb(236, 19, 19)";
 		cpf.style.borderWidth = "3px";
@@ -149,6 +198,13 @@ function validate_form(e) {
 	if(bool_email == false) {
 		email.style.borderColor = "rgb(236, 19, 19)";
 		email.style.borderWidth = "3px";
+		flag_input_error = false;
+	}
+	if(bool_lat_long == false) {
+		latitude.style.borderColor = "rgb(236, 19, 19)";
+		latitude.style.borderWidth = "3px";
+		longitude.style.borderColor = "rgb(236, 19, 19)";
+		longitude.style.borderWidth = "3px";
 		flag_input_error = false;
 	}
 	return flag_input_error;

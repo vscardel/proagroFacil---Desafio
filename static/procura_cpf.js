@@ -8,6 +8,7 @@ function procuraPorCPF(){
 		return;
 	}
 	linhas = document.getElementsByTagName('tr');
+	flag_find = false;
 	for(let i=0;i<linhas.length;i++) {
 		let colunas = linhas[i].getElementsByTagName('td');
 		//cpf
@@ -15,6 +16,17 @@ function procuraPorCPF(){
 			if(colunas[1].textContent.trim() != cpf.value){
 				linhas[i].style.display = "none";  
 			}
+			else {
+				flag_find = true;
+			}
+		}
+	}
+	if(!flag_find) {
+		alert("CPF informado não existe na base de dados");
+		//retorna as linhas que foram escondidas pela checagem
+		//anterior
+		for(let i=0;i<linhas.length;i++) {
+			linhas[i].style.display = "table-row";  	
 		}
 	}
 }
