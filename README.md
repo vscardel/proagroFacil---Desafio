@@ -11,7 +11,7 @@
   * crie a base: CREATE DATABASE proagroFacil;  
   * Selecione a base: USE proagroFacil;  
   * Copie e cole no terminal o código de criação das tabelas do arquivo /proagroFacil/comunicaPerda.sql  
-  * No arquivo /config.py atribuir os valores corretos aos seguintes parâmetros:
+  * No arquivo /proagroFacil/db.py atribuir os valores corretos aos seguintes parâmetros:
     * app.config['MYSQL_DATABASE_USER'] = 'username'  
     * app.config['MYSQL_DATABASE_PASSWORD'] = 'password'  
     * app.config['MYSQL_DATABASE_DB'] = 'proagroFacil'  
