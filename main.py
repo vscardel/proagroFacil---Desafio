@@ -22,6 +22,7 @@ def pesquisa():
 	return_todas_query = "SELECT * FROM comunicaPerda"
 	cursor.execute(return_todas_query)
 	todas_ocorrencias = cursor.fetchall()
+	conn.close()
 	return render_template('pesquisa.html',
 	todas_ocorrencias = todas_ocorrencias)
 	
@@ -54,6 +55,7 @@ def retorna_ocorrencias_mesma_data(data):
 	ocorrencias_mesma_data_query = '''SELECT latitude,longitude,evento 
 	FROM comunicaPerda''' + " WHERE data = " + '"' + data + '"'
 	cursor.execute(ocorrencias_mesma_data_query)
+	conn.close()
 	return cursor.fetchall()
 
 
@@ -87,7 +89,7 @@ def formulario_cadastro():
 		is_suspeita = determina_ocorrencia_suspeita(
 			float(latitude), float(longitude),evento,ocorrencias_mesma_data)
 
-		#insere 1 no campo de suspeita
+		#insere 1 no campo de suspeita]
 		if is_suspeita:
 			insert_query = '''INSERT INTO comunicaPerda VALUES(''' + "0," + '''
 			1,''' + '"' + name + '",' + '"' + email + '",' + '"' + cpf + '",' + '''
@@ -106,8 +108,7 @@ def formulario_cadastro():
 			cursor.execute(insert_query)
 			conn.commit()
 			return redirect('/pesquisa')
-		
-
+		conn.close()
 	return render_template('cadastro.html')
 
 @app.route('/delete/<int:id>')
@@ -118,11 +119,12 @@ def delete(id):
 	delete_query = "DELETE FROM comunicaPerda WHERE id = " + str(id)
 	cursor.execute(delete_query)
 	conn.commit()
+	conn.close()
 	return redirect('/pesquisa')
 
 @app.route('/update/<int:id>', methods = ['GET','POST'])
 def update(id):
-	
+
 	conn = mysql.connect()
 	cursor = conn.cursor()
 
@@ -180,6 +182,7 @@ def update(id):
 						WHERE id = ''' + str(id)
 			cursor.execute(update_query)
 			conn.commit()
+			conn.close()
 			return redirect('/pesquisa')
 
 	return render_template('update.html',id = id, old_values = old_values)
