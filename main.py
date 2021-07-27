@@ -173,4 +173,4 @@ def update(id):
 	return render_template('update.html',id = id, old_values = old_values)
 
 if __name__ == '__main__':
-	app.run(debug=True)
+	app.run(debug=False)
