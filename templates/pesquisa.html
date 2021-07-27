@@ -19,7 +19,7 @@
 }
 
 input[type=text], select {
-  width: 97%;
+  width: 30%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -29,7 +29,7 @@ input[type=text], select {
 }
 
 input[type=submit] {
-  width: 97%;
+  width: 10%;
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
@@ -71,9 +71,10 @@ input[type=submit] {
 <div id = "tela_pesquisa">
 
 	 <div id = "div_pesquisa">
-	    <label for="fname">Pesquisa por CPF</label>
+	 	<br>
+	    <label for="fname">Pesquisa por CPF</label> <br>
 	    <input type="text" id="fProcuraCPF" name="procuraCPF" placeholder="CPF",value="">
-	    <input type="submit" value="Pesquisa" onclick="procuraPorCPF()">
+	    <input type="submit" value="Pesquisar" onclick="procuraPorCPF()">
 	 </div>
 
 	<table id="tabela_pesquisa" class = "w3-table">
