@@ -7,10 +7,10 @@ function highlight_table(){
 		//SIM OU NAO
 		if(colunas[6]){
 			if(colunas[6].textContent.trim() == "SIM"){
-				linhas[i].style.backgroundColor = "rgba(203,30,90,0.5)";
+				linhas[i].style.backgroundColor = "#7b8494";
 			}
 			else if(colunas[6].textContent.trim() == "NÃO") {
-				linhas[i].style.backgroundColor = "##49a2f5";
+				linhas[i].style.backgroundColor = "#49a2f5";
 			}
 		}
 	}
