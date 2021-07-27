@@ -6,8 +6,6 @@ from app import app
 from db import mysql
 from flask import Flask, Response, render_template,request,url_for,redirect
 
-conn = mysql.connect()
-cursor = conn.cursor()
 
 #maxima distancia permitida para que uma ocorrencia nao seja
 #considerada suspeita de acordo com os critérios apresentados
@@ -19,11 +17,15 @@ def index():
 
 @app.route('/pesquisa')
 def pesquisa():
+	conn = mysql.connect()
+	cursor = conn.cursor()
 	return_todas_query = "SELECT * FROM comunicaPerda"
 	cursor.execute(return_todas_query)
 	todas_ocorrencias = cursor.fetchall()
 	return render_template('pesquisa.html',
 	todas_ocorrencias = todas_ocorrencias)
+	
+
 
 # Usa a fórmula de‘haversine’ para calcular a 
 # distancia entre pontos na forma (lat,long) 
@@ -47,6 +49,8 @@ def calcula_distancia(lat1,lat2,long1,long2):
 #retorna todas as ocorrencias que aconteceram na mesma data
 #com suas latitudes e longidutes
 def retorna_ocorrencias_mesma_data(data):
+	conn = mysql.connect()
+	cursor = conn.cursor()
 	ocorrencias_mesma_data_query = '''SELECT latitude,longitude,evento 
 	FROM comunicaPerda''' + " WHERE data = " + '"' + data + '"'
 	cursor.execute(ocorrencias_mesma_data_query)
@@ -67,6 +71,8 @@ def determina_ocorrencia_suspeita(lat_entrada,long_entrada,
 
 @app.route('/cadastro',methods = ['GET','POST'])
 def formulario_cadastro():
+	conn = mysql.connect()
+	cursor = conn.cursor()
 	if request.method == 'POST':
 		name = request.form['name']
 		email = request.form['email']
@@ -105,7 +111,10 @@ def formulario_cadastro():
 	return render_template('cadastro.html')
 
 @app.route('/delete/<int:id>')
+	
 def delete(id):
+	conn = mysql.connect()
+	cursor = conn.cursor()
 	delete_query = "DELETE FROM comunicaPerda WHERE id = " + str(id)
 	cursor.execute(delete_query)
 	conn.commit()
@@ -113,6 +122,9 @@ def delete(id):
 
 @app.route('/update/<int:id>', methods = ['GET','POST'])
 def update(id):
+	
+	conn = mysql.connect()
+	cursor = conn.cursor()
 
 	#com o intuito de deixar os valores antigos no formulário
 	#para não precisar preencher todos os dados novamente
