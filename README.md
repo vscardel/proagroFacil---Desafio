@@ -1,7 +1,7 @@
 # proagroFacil
 
 
-**Deploy**: Este desafio está em https://proagrofacil.herokuapp.com/
+**Deploy**: Este desafio está em https://proagrofacil.herokuapp.com/. Ele foi hospedado utilizando a plataforma Heroku.
 
 **Assume-se acesso a um terminal de algum SO unix-like**
 
