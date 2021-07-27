@@ -10,9 +10,10 @@
 	body{
 		background-color: #ebedf0;
 	}
-	#data_input{
+	#fdate{
 		margin-left: 25%;
 	}
+
 	input[type=text], select {
 	  width: 50%;
 	  padding: 12px 20px;
@@ -63,22 +64,22 @@
 <form action="/cadastro", method="POST", onsubmit="return validate(event)">
 	<h3 id="titulo">Cadastro de Ocorrência</h3>
 	
-	<input type="text" id="fname" name="name" placeholder="nome:",value="">
+	<input value="" type="text" id="fname" name="name" placeholder="nome:">
 
 	
-	<input type="text" id="femail" name="email" placeholder="email: username@gmail.com",value="">
+	<input value=""  type="text" id="femail" name="email" placeholder="email: username@gmail.com">
 
 	
-	<input type="text" id="fcpf" name="cpf" placeholder="cpf: 41960500007",value="">
+	<input value=""  type="text" id="fcpf" name="cpf" placeholder="cpf: 41960500007">
 
 	
-	<input type="text" id="flat" name="latitude" placeholder="latitude: 34.123456",value="">
+	<input value=""  type="text" id="flat" name="latitude" placeholder="latitude: 34.123456">
 
 	
-	<input type="text" id="flong" name="longitude" placeholder="longitude: -179.123456",value="">
+	<input value=""  type="text" id="flong" name="longitude" placeholder="longitude: -179.123456">
 
 	
-	<input type="text" id="flav" name="lavoura" placeholder="Tipo da Lavoura: Milho",value="">
+	<input value=""  type="text" id="flav" name="lavoura" placeholder="Tipo da Lavoura: Milho">
 
 	
 	<select id="focorr" name="ocorrencia">
@@ -91,7 +92,7 @@
 	</select>
 
 	<br>
-	<input id = "data_input" type="date" id="fdate" name="data",value="">
+	<input value="" type="date" id="fdate" name="data">
 	<br>
 	<input type="submit" value="Enviar">
 

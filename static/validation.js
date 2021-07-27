@@ -14,6 +14,7 @@ function return_input_list() {
 	let ocorrencia = document.getElementById('focorr');
 	let date = document.getElementById('fdate');
 	let list_of_form_inputs = [name,email,cpf,lat,long,lavoura,ocorrencia,date];
+	console.log(list_of_form_inputs);
 	return list_of_form_inputs;
 }
 
@@ -167,6 +168,7 @@ function validate_lat_long(e) {
 function validate_form(e) {
 	var cpf,email;
 	list_of_form_inputs = return_input_list();
+	console.log(list_of_form_inputs);
 	//assume q nao ocorreram erros
 	let flag_input_error = true;
 	for (let i=0;i<list_of_form_inputs.length;i++) {
