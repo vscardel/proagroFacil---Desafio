@@ -35,4 +35,3 @@
 
 **Considerações acerca da visualização da ocorrência**
 * A latitude e a longitude não foram mostradas na tabela por não apresentarem uma informação facilmente interpretável para o analista.
-
