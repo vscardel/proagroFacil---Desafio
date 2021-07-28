@@ -5,11 +5,11 @@ function highlight_table(){
 	for(let i=0;i<linhas.length;i++) {
 		let colunas = linhas[i].getElementsByTagName('td');
 		//SIM OU NAO
-		if(colunas[6]){
-			if(colunas[6].textContent.trim() == "SIM"){
+		if(colunas[7]){
+			if(colunas[7].textContent.trim() == "SIM"){
 				linhas[i].style.backgroundColor = "#7b8494";
 			}
-			else if(colunas[6].textContent.trim() == "NÃO") {
+			else if(colunas[7].textContent.trim() == "NÃO") {
 				linhas[i].style.backgroundColor = "#49a2f5";
 			}
 		}
