@@ -14,7 +14,6 @@ function return_input_list() {
 	let ocorrencia = document.getElementById('focorr');
 	let date = document.getElementById('fdate');
 	let list_of_form_inputs = [name,email,cpf,lat,long,lavoura,ocorrencia,date];
-	console.log(list_of_form_inputs);
 	return list_of_form_inputs;
 }
 
@@ -31,7 +30,17 @@ function check_same_char(my_str) {
 
 //segue o algoritmo padrão de verificação de cpf
 function validate_cpf(e) {
-	let cpf = document.getElementById('fcpf').value;
+	let cpf_entrada = document.getElementById('fcpf').value;
+	let cpf = "";
+
+	//tira pontos e hífens se houver
+	for(let i=0;i<cpf_entrada.length; i++) {
+		if (cpf_entrada[i] == '.' || cpf_entrada[i] == '-') {
+			continue;
+		}
+		cpf += cpf_entrada[i];
+	}
+
 	// tamanho invalido
 	if(cpf.length != 11) {
 		return false;
@@ -53,7 +62,7 @@ function validate_cpf(e) {
 		}
 		let first_verification_result = (sum*10) % 11;
 		if(first_verification_result == 10) {
-			first_verification_result = 0.
+			first_verification_result = 0;
 		}
 		if(first_verification_result != first_digit) {
 			return false;
@@ -156,8 +165,7 @@ function validate_lat_long(e) {
 	}
 	prefix_lat = get_prefix_float(latitude);
 	prefix_long = get_prefix_float(longitude);
-	console.log(prefix_lat);
-	console.log(prefix_long);
+
 	//a latitude vai de -90 à 90 e a longitude de -180 à 180
 	if(prefix_lat.length > 2 || prefix_long.length > 3) {
 		return false;
@@ -168,7 +176,6 @@ function validate_lat_long(e) {
 function validate_form(e) {
 	var cpf,email;
 	list_of_form_inputs = return_input_list();
-	console.log(list_of_form_inputs);
 	//assume q nao ocorreram erros
 	let flag_input_error = true;
 	for (let i=0;i<list_of_form_inputs.length;i++) {
