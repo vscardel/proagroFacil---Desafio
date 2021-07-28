@@ -1,4 +1,4 @@
-//deixa a linha vermelha ou verde de acordo
+//deixa a azul ou cinza de acordo
 //com o valor de suspeita da ocorrencia
 function highlight_table(){
 	linhas = document.getElementsByTagName('tr');
