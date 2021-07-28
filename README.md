@@ -32,3 +32,7 @@
 * Outra decisão que precisou ser tomada foi se todas as ocorrências no mesmo dia que atendessem os critérios seriam marcadas como suspeitas ou apenas a ocorrência cadastrada. Se optou pela segunda opção, com as ocorrências dos outros dias se mantendo como não suspeitas.
 * Pode acontecer da atualização de uma ocorrência torná-la suspeita (mudança na localização ou ocorrência). Por isso, no momento da atualização, a verificação de ocorrência suspeita é feita novamente, e se a ocorrência se tornar suspeita ela será marcada como tal.
 * Uma consequência dos pontos 1 e 2 é que uma ocorrência não suspeita pode ser atualizada em algum campo e ser marcada como suspeita pelo sistema, mesmo que o campo atualizado não tenha a ver com latitude, longitude e ocorrência. Isso acontece pois ela ocorreu no mesmo dia e em uma raio menor do que 10km de uma ocorrência cadastrada como suspeita em um momento anterior à atualização (com ocorrência divergente), e o sistema agora no momento da atualização verificou que ela é também suspeita. (por causa da verificação do segundo ponto). Isso não foi considerado um erro, e sim uma consequência das decisões tomadas.
+
+**Considerações acerca da visualização da ocorrência**
+* A latitude e a longitude não foram mostradas na tabela por não apresentarem uma informação facilmente interpretável para o analista.
+
